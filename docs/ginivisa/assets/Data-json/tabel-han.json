@@ -1,0 +1,16 @@
+[
+  {
+    "tip": "Cameră de familie",
+    "total": 1,
+    "disponibil": 1,
+    "capacitate" : 3,
+    "pret": 300
+  },
+  {
+    "tip": "Cameră dublă",
+    "total": 5,
+    "disponibil": 5,
+    "capacitate" : 2,
+    "pret": 200
+  }
+]
