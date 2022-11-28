@@ -1,0 +1,52 @@
+<!-- Gallery Pachete -->
+
+<h4 class="text-center green">Pachete turistice </h4>
+
+<div class="ziua">
+  <div class="ziua-item"   *ngFor="let ziua of Ziua"   appModalClick  (click)="showModal($event)"   id={{ziua.id}}>
+    <div class="title-container" id={{ziua.id}}>
+      <h5 class="text-center" (click)="showModal($event)" id={{ziua.id}}> {{ ziua.title }}</h5>
+      <!-- <h6 class="text-center" id={{ziua.id}}>{{ ziua.price }} <span class="small" id={{ziua.id}}> RON</span> / <span class='material-icons' id={{ziua.id}}>person_outline</span></h6> -->
+    </div>
+    <img src={{ziua.imgThumb}} alt=""  id={{ziua.id}}>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-container">
+  <div class="modal"   *ngFor="let ziua of Ziua"  id={{ziua.id}}>
+    <div class="modal-content container">
+      <h5 class="text-center" (click)="showModal($event)" id={{ziua.id}}> {{ ziua.title }}</h5>
+      <div class="description" *ngFor="let item of ziua.activity" id={{ziua.id}}>
+        <h6 class="green">{{item.title}}</h6>
+        <div class="description" *ngFor="let list of item.list" id={{ziua.id}}>
+          <ul>
+            <li>{{ list }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Gallery swiper -->
+    <swiper
+      [loop]="true"
+      [spaceBetween]="10"
+      [navigation]="true"
+      [thumbs]="{ swiper: thumbsSwiper }"
+      class="mySwiper2 container" >
+    <ng-template swiperSlide  *ngFor="let image of ziua.imgGalery">
+      <img src={{image.url}} alt=""  id={{ziua.id}}>
+      <div class="img-descr-container">
+        <h1 class="img-description"> {{ image.details }} </h1>
+      </div>
+    </ng-template>
+    </swiper>
+
+  </div>
+
+    <!-- Close Button -->
+    <button id={{ziua.id}} class="close-modal" (click)="closeModal($event)">
+      <span id={{ziua.id}} class="material-icons" >close</span>
+    </button>
+
+  </div>
+

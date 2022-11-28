@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "nume": "Grigore Roșu",
+    "functie": "Co-Fondator",
+    "descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nulla.",
+    "imgURL": "assets/images/Echipa/Grigore Rosu.jpg",
+    "despre": "Este co-fondatorul firmei Ginivișa SRL, împreuna cu soția lui, Luisa-Maria Roșu. Grigore este cercetător, educator, antreprenor și filantrop. Este profesor de informatică în SUA, la <a href='https://cs.illinois.edu/' target='blank'>University of Illinois at Urbana-Champaign</a>, precum si CEO-ul firmei <a href='https://runtimeverification.com/' target='blank'>Runtime Verification</a>. Între anii 2000-2002, a lucrat ca cercetător la <a href='https://www.nasa.gov/ames' target='blank'>NASA Ames</a>. Între anii 1996-2000, și-a făcut doctoratul la <a href='https://cse.ucsd.edu/' target='blank'>University of California San Diego</a>. Mai înainte, a fost profesor de informatică la <a href='https://cs.unibuc.ro/' target='blank'>Univesitatea Bucuresti</a>. În cadrul aceleiași universități, a absolvit programul de licență și cel de master la Facultatea de Matematică. În timpul facultății, a fost și membru al <a href='https://www.clubulalpinroman.net/' target='blank'>Clubului Alpin Român</a>, prin care a descoperit frumusețile munților și a înțeles importanța protejării acestora. Atat Grigore, cât și Luisa, sunt “founding angels” în <a href='https://www.romanianunitedfund.org/' target='blank'> Romanian United Fund</a>, prin care finanțează și sponsorizează instituții non-profit din România, în special instituții focalizate pe protecția mediului, culturii și tradițiilor românești. Grigore a copilărit pe Valea Bistriței, în satul Gureni, unde este și sediul firmei Ginivișa.<br><a href='https://en.wikipedia.org/wiki/Grigore_Ro%C8%99u' target='blank'>Wikipedia - Grigore Roșu</a>"
+  },
+  {
+    "id": 1,
+    "nume": "Luisa-Maria Rosu",
+    "functie": "Co-Fondator",
+    "descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nulla.",
+    "imgURL": "assets/images/Echipa/Luisa-Maria Rosu.jpg",
+    "despre": "Este co-fondator al firmei SC Ginvișa SRL împreuna cu soțul ei, Grigore. Luisa și Grigore sunt membrii activi ai comunității româno-americane care promovează conservarea mediului local și revitalizarea turismului cultural în România. Luisa s-a născut și a copilărit în București, unde și-a început cariera ca învățătoare și a continuat apoi ca profesor de matematică la nivel de gimnaziu și liceu. Luisa deține un doctorat în Științele Educației, specialitatea Matematică, acordat de Universitatea din Illinois, Urbana-Champaign. De asemenea, deține o diplomă de master în Matematică Aplicată de la <a href='https://www.usc.edu/' target='blank'>University of Southern California</a> (2000), dar și o diplomă de licență și una de master în Matematică, de la <a href='https://unibuc.ro/' target='blank'>Universitatea din București</a> (1996). În prezent, Luisa este directorul centrului de educație <a href='https://istem.illinois.edu/about/rosu.research.html' target='blank'>I-STEM</a>. În anul 2014, ea a primit premiul <a href='https://fulbrightscholars.org/grantee/luisa-maria-rosu' target='blank'>CORE Early Career Fulbright U.S. Scholar</a>, când a avut ocazia să colaboreze îndeaproape și să stabilească legături strânse cu cadre didactice și cercetători români în Științele Educației."
+  },
+  {
+    "id": 2,
+    "nume": "Florin Vijulan",
+    "functie": "CEO",
+    "descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nulla.",
+    "imgURL": "assets/images/Echipa/Florin Vijulan.jpg",
+    "despre": "Absolvent al <a href='https://www.upet.ro/' target='blank'>Universității Tehnice Petroșani</a> având o activitate în domeniul reparațiilor de instalații electromecanice de peste 10 ani. În 2006 a înființat societatea SC Doriflor SRL, care a avut ca domeniu de activitate alimentație publică și restaurant. Între anii 2011 si 2014 a lucrat ca inginer în Italia la SC Metal Montaggi SRL, societate specializată în realizarea și montajul structurilor metalice de mari dimensiuni. Pe parcursul anilor 2015 - 2019 acesta a coordonat lucrările efectuate la Stadionul Ion Oblemenco din Craiova, Stadionul Municipal din Tg-Jiu și a Viaductului de pe autostrada Sibiu - Orăștie. Din anul 2020 deține funcția de administrator și asociat la SC Ginivișa SRL și este voluntar în <a href='https://www.valeabistritei.org/' target='blank'>Fundația Valea Bistriței</a>, unde se implică în rezolvarea problemelor de mediu și educație legate de această zonă."
+  },
+  {
+    "id": 3,
+    "nume": "Marian Tudorache",
+    "functie": "Administrator Pensiuni",
+    "descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nulla.",
+    "imgURL": "assets/images/Echipa/Marian Tudorache.jpg",
+    "despre": "Absolvent al <a href='https://www.upet.ro/' target='blank'>Universității Tehnice Petroșani</a> și al Școlii Naționale de antrenori din cadrul <a href='https://www.frfotbal.ro/' target='blank'>FRFotbal</a>. A activat ca manager la Jiul Petroșani și a coordonat activitatea de la Agenția Imobiliară Helios din Petroșani. În prezent ocupă funcția de vicepreședinte la <a href='https://www.facebook.com/profile.php?id=100070097391087' target='blank'>CS Pro Fotbal Junior Petroșani</a> și de administrator al pensiunilor Hanul Vânătorului și Casa Ana."
+  },
+  {
+    "id": 4,
+    "nume": "Călin Mihalescu",
+    "functie": "Agent Comercial",
+    "descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nulla.",
+    "imgURL": "assets/images/Echipa/Calin Mihalescu.jpg",
+    "despre": "Absolvent al <a href='https://www.upet.ro/' target='blank'>Universității Tehnice Petroșani</a>. Inginer stagiar în cadrul Combinatului Siderurgic Hunedoara (1996 - 1998). Din anul 1998 a intrat în domeniul Trade Marketing-ului și Distribuției produselor F.M.C.G. în cadrul unor firme multinaționale ca: Wrygley's, Unilever si British American Tobacco. Din anul 2021 ocupă funcția de agent comercial la firma SC Ginivișa SRL și se bucură de natura frumoasa a zonei Văii Bistriței, pe care vrea să o păstreze cât mai autentică."
+  },
+  {
+    "id": 5,
+    "nume": "Stefania Vijulan",
+    "functie": "IT Specialist",
+    "descriere": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, nulla.",
+    "imgURL": "assets/images/Echipa/Stefania Vijulan.jpg",
+    "despre": "Absolventă a <a href='https://fmi.unibuc.ro/' target='blank'>Facultății de Matematică și informatică</a>, a domeniului Informatică din cadrul <a href='https://cs.unibuc.ro/' target='blank'>Universității din București</a>. Din anul 2013, timp de 7 ani, a activat ca voluntar în cadrul Organizației Naționale Cercetașii României, coordonând evenimente ce au ca scop protejarea naturii, cât și ajutorarea persoanelor cu diferite probleme. În anul 2019, a început activitatea de voluntariat în cadrul Asociației Studenților la Matematică și Informatică, din cadrul facultății menționate anterior. În cadrul acesteia a avut funcția de Vicepreședinte unde a avut ocazia să coordoneze multiple activități organizate pentru studenții aceleași unități de învățământ. De origine din județul Gorj, localitatea Târgu Jiu, iubirea pentru natură a determinat-o pe aceasta să contribuie la dezvoltarea turismului din comuna Peștișani.<br> <a href='https://www.linkedin.com/in/stefaniavijulan/'>LinkedIn - Stefania</a>"
+  }
+]

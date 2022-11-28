@@ -1,0 +1,108 @@
+<footer>
+
+  <div class="container footer-container">
+    <!-- Links Column -->
+    <div class="footer-column">
+      <h4 class="text-center">Link-uri</h4>
+      <div class="d-flex">
+        <div class="footer-row">
+          <mat-icon>euro_symbol</mat-icon>
+          <span class="footer-link"> <a href="https://www.valeabistritei.org/" target="blank">Fundație</a></span>
+        </div>
+        <div class="footer-row">
+          <mat-icon>work</mat-icon>
+          <span class="footer-link" routerLink="/joburi">Joburi</span>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="footer-row">
+          <mat-icon>announcement</mat-icon>
+          <span class="footer-link" routerLink="/noutati">Noutăți</span>
+        </div>
+        <div class="footer-row">
+          <mat-icon>perm_identity</mat-icon>
+          <span class="footer-link" routerLink="/echipa">Echipa</span>
+        </div>
+      </div>
+      <div class="d-flex">
+        <!-- <div class="footer-row">
+          <mat-icon>build</mat-icon>
+          <span class="footer-link" routerLink="/admin">Admin</span>
+        </div> -->
+      </div>
+      <!-- <div class="d-flex">
+        <div class="footer-row">
+          <mat-icon>work</mat-icon>
+          <span class="footer-link" routerLink="/brain-hub">BrainHub Cismigiu</span>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Social -->
+    <div class="footer-column">
+      <h4 class="text-center">Social</h4>
+      <div class="container social">
+
+        <a href="https://www.facebook.com/sc.ginivisa" target="blank">
+          <img src="assets/images/Social-facebook.png" alt="">
+        </a>
+        <a href="https://www.instagram.com/ginivisa.2020/"  target="blank">
+          <img src="assets/images/Social-instagram.png" alt="">
+        </a>
+        <!-- <a href="https://www.linkedin.com/in/ginivisa-srl-6a6846238/"  target="blank">
+          <img src="assets/images/Social-linkedin.png" alt="">
+        </a> -->
+
+      </div>
+    </div>
+
+    <!-- Address Column For Ginivisa -->
+    <div class="footer-column"      *ngIf="myRoute != '/brain-hub'">
+      <h4 class="text-center">Contact Ginivișa</h4>
+      <div class="footer-row">
+        <mat-icon>home</mat-icon>
+        <span>Județ Gorj, comuna Peștișani, sat Gureni, strada Barajelor, nr. 84, 217335</span>
+      </div>
+      <div class="footer-row">
+        <mat-icon>email</mat-icon>
+        <span>contact@ginivisa.com</span>
+      </div>
+      <div class="footer-row">
+        <mat-icon>phone</mat-icon>
+        <span *ngIf="!displayTEL">+40 784 503 599</span>
+        <span class="footer-link"  *ngIf="displayTEL"><a  href="tel:+40 784 503 599">+40 784 503 599</a></span>
+      </div>
+    </div>
+
+    <!-- Address Column For BrainHub -->
+    <div class="footer-column"    *ngIf="myRoute == '/brain-hub'">
+      <h4 class="text-center">Contact BrainHub</h4>
+
+      <div class="footer-row">
+          <mat-icon>home</mat-icon>
+          <span>Strada Popa Tatu, Nr. 18, Sector 1, București.</span>
+      </div>
+      <div class="footer-row">
+          <mat-icon>phone</mat-icon>
+          <span *ngIf="!displayTEL">+40 724 363 511</span>
+          <span class="footer-link"  *ngIf="displayTEL"><a  href="tel:+40 784 503 599">+40 784 503 599</a></span>
+      </div>
+      <div class="footer-row">
+          <mat-icon>email</mat-icon>
+          <span>contact@ginivisa.com</span>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Copyright -->
+  <hr>
+
+  <div class="container copyright text-center">
+    © 2022  <a href="https://www.das-design.eu" target="blank">DAS-Design SRL</a>
+  </div>
+
+</footer>
+
+<a href="http://"></a>

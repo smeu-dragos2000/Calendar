@@ -1,0 +1,96 @@
+<section>
+  <div class="buttons-container">
+    <button routerLink="/turism" class="btn-galerie" > <span class="material-icons">arrow_back</span></button>
+  </div>
+</section>
+
+<h4 class="text-center green">Hanul Vânătorului</h4>
+<div class="rating-stars text-center">
+  <img src="assets/images/3-Margarete.png" alt="">
+</div>
+<p>
+  <strong>Hanul Vânătorului</strong> este o pensiune construită în stilul conacelor boierești de odinioară. Este nouă și miroase a lemn proaspăt, ducându-i pe amatorii de istorie cu gândul la o anexă dintr-o « villa-rustica » din Antichitatea Imperiului Roman. Este spațioasă și cuprinde 5 camere de 2 persoane cu băi private, o cameră de o persoană cu baie privată, un apartament de 3 persoane cu baie proprie, un living, o sală de mese de 25 de persoane, o bucătărie, dar și un loc special amenajat pentru focuri de tabără. Și să nu uităm de <strong>restaurantul „Hanul Vânătorului”</strong> cu feluri de mâncare tradiționale și evenimente pe cinste!
+</p>
+<p>
+  Chiar alături de Hanul Vânătorului, regăsim <a routerLink="/turism-ana" routerLinkActive="active">Casa Ana</a>, o pensiune dotată cu tot confortul, dar mai intimă, oferind condiții optime pentru relaxare. Casa Ana poate găzdui grupuri de până la 10 vizitatori, invitați să se bucure de un ciubăr cu jacuzzi amplasat pe malul râului, de un loc de grătar numai bun pentru o șuetă cu prietenii sau cu familia, ori de o sală de jocuri cu masă de tenis, masă de billiard și dartboard.
+</p>
+<p>
+  Oferind peisaje de neuitat de la etaj și de la terase, Hanul Vânătorului este potrivit familiilor numeroase, dar și grupurilor mari de prieteni care vor să trăiască experiențe unice într-un loc feeric, departe de aglomerația și de poluarea urbană. Și ca să fie totul de-a dreptul perfect, de acum nu trebuie să-ți mai faci griji că nu vei avea destui bani cash la tine pentru cazare! Suntem dotați cu POS și acceptăm plata cu cardul!
+</p>
+
+<hr>
+
+<!-- Lightbox -->
+<ng-image-slider [images]="GalerieHan" #nav></ng-image-slider>
+
+<br>
+
+<!-- Facebook & Booking -->
+<section class="buttons">
+  <a [href]="linkFacebookHan" target="blank"><button mdbBtn color="fb" class="waves-light facebook-btn" mdbWavesEffect>Facebook</button></a>
+  <a href="/assets/Meniu Han.pdf" target="blank"><button mdbBtn color="fb" class="waves-light booking-btn" mdbWavesEffect>Meniu</button></a>
+  <a [href]="linkBookingHan" target="blank"><button mdbBtn color="fb" class="waves-light booking-btn" mdbWavesEffect>Booking</button></a>
+</section>
+
+<hr>
+
+<!-- Prices Table -->
+<table class="container table table-rooms">
+  <thead>
+    <tr class="green lead text-center">
+      <th style="width: 30%;">Tip</th>
+      <th style="width: 10%;">Număr</th>
+      <th>Capacitate</th>
+      <th>Preț  / Zi<span class="small"> (ron)</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container  *ngFor="let camera of TabelHan">
+      <tr>
+        <td class="" >{{ camera.tip }}</td>
+        <td class="text-center"  *ngIf="camera.disponibil >= 1">{{ camera.disponibil }}</td>
+        <td class="text-center back-red"  *ngIf="camera.disponibil == 0">{{ camera.disponibil }}</td>
+        <td class="text-center"> <span class='material-icons'>person_outline </span>  <span class="lead"> x {{camera.capacitate}}</span> </td>
+        <td class="text-center">{{ camera.pret }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<!-- Rezerva -->
+<br>
+<section  *ngIf="!displayCalendar" class="rezerva">
+  <button class="green" (click)="showCalendar()">Rezervă</button>
+</section>
+
+<!-- Calendar -->
+<section  class="calendar-container"  *ngIf="displayCalendar">
+  <button  class="close-btn" (click)="closeCalendar()">
+    <span  class="material-icons" >close</span>
+  </button>
+  <br>
+  <div class="row">
+    <h5 class="text-center green">Cameră de familie</h5>
+    <app-calendar [PricePerNight]="TabelHan[0].pret"></app-calendar>
+  </div>
+  <br>
+  <div class="row">
+    <h5 class="text-center green">Cameră dublă</h5>
+
+      <div class="row text-center d-inline-block">
+        <span class="d-inline green">Număr Camere: </span>
+        <select id="numarCamere" class="form-control d-inline" #teams (change)="onSelected(teams.value)">
+          <option value=0>0</option>
+          <option selected value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+      </div>
+      <app-calendar [PricePerNight]="TabelHan[1].pret" [NumarCamere]="+teams.value"></app-calendar>
+  </div>
+
+  <app-form-rezerva></app-form-rezerva>
+  <br>
+</section>

@@ -1,0 +1,65 @@
+[
+  {
+    "id": 0,
+    "title": "Aprilia Park",
+    "imageURL": "assets/images/Turism/Atractii/Aprilia-Park.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Aprilia-Park.jpg",
+    "text": "Aprilia Park este situată în comuna Arcani, sat Sănătești, la aproximativ 13 km de zona de camping și de cea destinată cultivării fructelor. Aprilia Park este unul dintre cele mai populare aqua park-uri din județul Gorj și dispune de tobogane, cascade cervicale, jacuzzi, pool-bar și multe alte zone interesante, spre bucuria celor mici, dar și a adulților."
+  },
+  {
+    "id": 1,
+    "title": "Mănăstirea Tismana",
+    "imageURL": "assets/images/Turism/Atractii/Manastirea-Tismana.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Manastirea-Tismana.jpg",
+    "text": "Mănăstirea Tismana se află în orașul Tismana, la aproximativ 19 km de zona de camping și de cea destinată cultivării fructelor. Situată la poalele munților Vâlcan și Godeanu, această mănăstire reprezintă cel mai vechi așezământ monahal din România. Biserica din cadrul mănăstirii a fost zidită la finalul secolului al XIV de către tatăl lui Mircea cel Bătrân, Radu- Vodă."
+  },
+  {
+    "id": 2,
+    "title": "Valea Sohodolului",
+    "imageURL": "assets/images/Turism/Atractii/Cheile-Sohodorului.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Cheile-Sohodorului.jpg",
+    "text": "Valea Sohodolului se află în comuna Runcu, la aproximativ 20 de km de zona de camping si de cea destinată cultivării fructelor. Aceasta este o rezervație naturală ce se întinde pe o suprafață de aproximativ 12 km în interiorul munților Vâlcan.  Întreaga întindere surprinde zone de o frumusețe aparte, dar și numeroase formațiuni apărute datorită apei sau a vântului care au reușit să străpungă calcarul.  Dintre acestea, cele mai cunoscute sunt: Peștera Popii, Inelul și Nările."
+  },
+  {
+    "id": 3,
+    "title": "Casa memorială „Brâncuși”",
+    "imageURL": "assets/images/Turism/Atractii/Casa-Memoriala-Brancusi.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Casa-Memoriala-Brancusi.jpg",
+    "text": "Casa memorială „Constantin Brâncuși” este situată în satul Hobița din comuna Peștișani, la aproximativ 11 km de zona de camping și de cea destinată cultivării fructelor, și reprezintă locul natal al sculptorului Constantin Brâncuși. Arhitectura populară a acesteia este specifică sfârșitului secolului XIX și se poate observa pe ușa cămării, stâlpilor prispei și nu numai.  În fiecare încăpere se găsesc diferite obiecte ce amintesc de viața de zi cu zi a sculptorului, dar și de cariera lui. Cu siguranță un obiectiv pe care trebuie să-l bifați pe lista cu lucruri de văzut!"
+  },
+  {
+    "id": 4,
+    "title": "Platoul „Valea Nucu”",
+    "imageURL": "assets/images/Turism/Atractii/Valea-Nucu.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Valea-Nucu.jpg",
+    "text": "Platoul „Valea Nucu” reprezintă granița dintre satul Gureni și satul Valea Mare. Accesul în acest loc rustic se face ori cu ajutorul mașinii prin satul Valea Mare, ori pe un traseu montan prin satul Gureni, pentru amatorii de hiking. Și dacă v-ați fi așteptat sa fiți înconjurați de livezi pline cu nuci, pentru a justifica denumirea platoului, veți descoperi de fapt pădurile de tei. Splendoarea vizuală și mireasma îmbătătoare a parfumului florilor de tei din această zonă au dat naștere „Sărbătorii Teiului”, eveniment care a luat amploare de la o ediție la alta, având loc la începutul lunii iulie, in plină perioadă florală."
+  },
+  {
+    "id": 5,
+    "title": "Muzeul Satului",
+    "imageURL": "assets/images/Turism/Atractii/Muzeul-Satului-Curtisoara.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Muzeul-Satului-Curtisoara.jpg",
+    "text": "„Muzeul Satului” este situat la Curtișoara, la aproximativ 35 km de zona de camping și de cea destinată cultivării fructelor. În acest loc de poveste se află o reproducere a caselor și obiectelor de lucru ale secolelor XVIII- XIX din zona subcarpatică. Acest muzeu a fost amenajat între 1966- 1975 în jurul Culei Cornoiu, construită în anul 1785."
+  },
+  {
+    "id": 6,
+    "title": "Muzeul Tezaurului BNR",
+    "imageURL": "assets/images/Turism/Atractii/Muzeul-Tezaurului-BNR.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Muzeul-Tezaurului-BNR.jpg",
+    "text": "Muzeul Tezaurului BNR este situat la câțiva metri de Mănăstirea Tismana. Acesta a fost deschis pe data de 26 iulie 2016 în prezența Mitropolitului Olteniei, ÎPS Irineu și în prezența guvernatorului BNR, Mugur Constantin Isărescu. Povestea Tezaurului BNR, ascuns la Tismana, în perioada 1944-1947, se află în interiorul muzeului."
+  },
+  {
+    "id": 7,
+    "title": "Cele 9 biserici",
+    "imageURL": "assets/images/Turism/Atractii/Cele-9-biserici.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Cele-9-biserici.jpg",
+    "text": "Cele 9 biserici reprezintă un ansamblu complex care se întinde pe suprafața a 7 sate: Peştişani, Brădiceni, Hobiţa, Boroşteni, Seuca, Gureni, Frânceşti. Patru dintre aceste biserici sunt sculptate în lemn și aparțin Arhiepiscopiei Craiova, cea mai veche fiind ctitorită în anul 1735 ( „Cuvioasa Paraschiva” - Peștișani), iar cea mai nouă în anul 1935 („Biserica de lemn”- Boroșteni)."
+  },
+  {
+    "id": 8,
+    "title": "Târgu-Jiu",
+    "imageURL": "assets/images/Turism/Atractii/Poarta-Sarutului.jpg",
+    "thumbURL": "assets/images/Turism/Atractii/Thumb/Poarta-Sarutului.jpg",
+    "text": "Târgu-Jiu este municipiul județului Gorj și se află la aproximativ 25 km de zona de camping și de cea destinată cultivării fructelor. Aici se regăsesc 4 dintre cele mai cunoscute sculpturi ale lui Constantin Brâncuși așezate pe Calea Eroilor: Masa Tăcerii, Aleea Scaunelor, Poarta Sărutului, Coloana Infinitului. De asemenea, „Muzeul istoric” și „Muzeul de artă” reprezintă alte două puncte de atracție turistică cu o importantă semnificativă."
+  }
+]

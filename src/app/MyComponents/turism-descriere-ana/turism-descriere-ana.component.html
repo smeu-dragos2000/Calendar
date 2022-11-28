@@ -1,0 +1,77 @@
+
+<section>
+  <div class="buttons-container">
+    <button routerLink="/turism" class="btn-back" > <span class="material-icons">arrow_back</span></button>
+  </div>
+</section>
+
+<h4 class="text-center green">Casa Ana</h4>
+<div class="rating-stars text-center">
+  <img src="assets/images/3-Stele.png" alt="">
+</div>
+<p>
+  <strong>Casa Ana</strong> este o pensiune elegantă și modernă, care oferă o ambianță intimă, romantică, tocmai pentru că dispune de mai puține camere de oaspeți. Este un loc perfect pentru un sejur liniștit în mijlocul naturii, potrivit mai degrabă familiilor restrânse, grupurilor mai mici de prieteni și cuplurilor de îndrăgostiți. Este o casă plină de dragoste, de relaxare, de confort și de armonie, compartimentată așa încât să ofere căldura și intimitatea necesară musafirilor. Ciubărul amplasat chiar pe marginea Bistriței este „vedeta” pensiunii, creând la poalele muntelui o atmosferă autentică de „spa” în natură. Chiar vizavi de această pensiune, ne întâmpină maiestuos „<a routerLink="/turism-han" routerLinkActive="active">Hanul Vânătorului</a>”, o vilă impresionantă cu două etaje, potrivită grupurilor mai mari de vizitatori. Aici, veți găsi și un restaurant specializat în mâncare tradițională, cu mâncare accesibilă și gustoasă.
+</p>
+
+<p>
+  Casa Ana are 4 camere de 2 persoane, 2 paturi pliante pentru copii, 2 băi, un living cu capacitate de 10 persoane, o bucătărie, un grătar, o terasă, oferind contra cost spații dedicate diferitelor jocuri de socializare (masă de tenis, masă de biliard, dartboard) și ciubăr cu hidromasaj. Chiar dacă ne aflăm într-o zonă rurală din munți, oaspeții noștri nu trebuie să se îngrijoreze pentru plata cazării în numerar. Casa Ana este dotată și cu un POS, iar plata cu cardul a devenit deja preferata turiștilor!
+</p>
+
+<hr>
+
+<!-- Lightbox -->
+<ng-image-slider [images]="GalerieAna" #nav></ng-image-slider>
+
+<br>
+
+<!-- Facebook & Booking -->
+<section class="buttons">
+  <a [href]="linkFacebookAna" target="blank"><button mdbBtn color="fb" class="waves-light facebook-btn" mdbWavesEffect>Facebook</button></a>
+  <a [href]="linkBookingAna" target="blank"><button mdbBtn color="fb" class="waves-light booking-btn" mdbWavesEffect>Booking</button></a>
+</section>
+
+<hr>
+
+<!-- Prices Table -->
+<table class="container table table-rooms">
+  <thead>
+    <tr class="green lead text-center">
+      <th style="width: 30%;">Tip</th>
+      <th style="width: 10%;">Număr</th>
+      <th>Capacitate</th>
+      <th>Preț  / Zi<span class="small"> (ron)</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container  *ngFor="let camera of TabelAna">
+      <tr>
+        <td class="" >{{ camera.tip }}</td>
+        <td class="text-center"  *ngIf="camera.disponibil >= 1">{{ camera.disponibil }}</td>
+        <td class="text-center back-red"  *ngIf="camera.disponibil == 0">{{ camera.disponibil }}</td>
+        <td class="text-center"> <span class='material-icons'>person_outline </span>  <span class="lead"> x {{camera.capacitate}}</span> </td>
+        <td class="text-center">{{ camera.pret }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<!-- Rezerva -->
+
+<section  *ngIf="!displayCalendar" class="rezerva">
+  <button class="green" (click)="showCalendar()">Rezervă</button>
+</section>
+<br>
+<!-- Calendar -->
+<section  class="calendar-container"  *ngIf="displayCalendar">
+  <button  class="close-btn" (click)="closeCalendar()">
+    <span  class="material-icons" >close</span>
+  </button>
+  <br>
+  <app-calendar [PricePerNight]="TabelAna[0].pret" [zileOcupate]="zileOcupateAna"></app-calendar>
+
+  <app-form-rezerva></app-form-rezerva>
+  <br>
+</section>
+
+
+

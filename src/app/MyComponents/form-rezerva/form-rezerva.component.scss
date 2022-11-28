@@ -1,0 +1,18 @@
+.form-container {
+  margin: auto;
+  max-width: 600px;
+
+  .form-group {
+    margin-top: .5rem;
+    button {
+      margin-top: 1rem;
+      margin: auto;
+    }
+  }
+
+  .is-invalid {
+    border: 1px solid red;
+  }
+}
+
+

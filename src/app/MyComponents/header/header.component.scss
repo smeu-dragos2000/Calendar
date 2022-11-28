@@ -1,0 +1,53 @@
+.my-navbar {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#logo-text {
+  font-size: 1.8rem;
+  color: #33C5F3;
+}
+#logo img {
+  max-width: 40px;
+}
+// Hamburger Menu - Button
+.navbar-toggler {
+  background: black;
+  outline: 1px solid grey;
+}
+.nav-link {
+  font-size: 1.2rem;
+  text-shadow: 0 0  2px black;
+  padding: 0 !important;
+  margin-left: 1.2rem;
+}
+.active {
+  color: white;
+}
+
+
+
+
+
+
+// Align navLinks to center on small screen
+@media screen and (max-width: 991px) {
+  ul {
+    align-items: center !important;
+    li {
+      margin: auto !important;
+      a {
+        margin: auto !important;
+      }
+    }
+  }
+}
+
+// Don't show Logo text on small screen
+@media screen and (max-width: 310px) {
+  #logo {
+    display: none;
+  }
+}
