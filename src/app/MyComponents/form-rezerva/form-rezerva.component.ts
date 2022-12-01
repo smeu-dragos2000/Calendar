@@ -8,13 +8,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class FormRezervaComponent implements OnInit {
 
-  // rezervaForm = new FormGroup ({
-  //   nume : new FormControl('', [Validators.required]),
-  //   preNume : new FormControl(''),
-  //   email : new FormControl(''),
-  //   telefon : new FormControl(''),
-  // })
-
   rezervaForm!: FormGroup;
   submitted = false;
   showForm = true;
@@ -27,6 +20,8 @@ constructor (private FormBuilder: FormBuilder) {}
     this.rezervaForm = this.FormBuilder.group({
       nume: ['', Validators.required],
       preNume: ['', Validators.required],
+      country: ['', Validators.required],
+      address: ['', Validators.required],
       email: ['', Validators.required],
       telefon: ['', [Validators.required, Validators.minLength(9)]]
     })

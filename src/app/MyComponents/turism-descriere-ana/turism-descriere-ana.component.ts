@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import  galerieAna  from '../../../assets/Data-json/Galerie-Ana.json';
 import  tabelAna  from '../../../assets/Data-json/tabel-ana.json';
-import  calendarZileOcupate  from '../../../assets/Data-json/calendar-zile-ocupate.json';
+
 
 @Component({
   selector: 'app-turism-descriere-ana',
@@ -19,10 +19,10 @@ export class TurismDescriereAnaComponent implements OnInit {
   displayCalendar = false;
 
   @Input() public GalerieAna: { image: string, thumbImage: string}[] = galerieAna;
-  @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number}[] = tabelAna;
-  @Input() public CalendarZileOcupate: { Pensiune: string, Camera: string, zileOcupate: string[]}[] = calendarZileOcupate;
+  @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: string[]}[] = tabelAna;
 
-  zileOcupateAna = calendarZileOcupate[0].zileOcupate
+
+
 
   constructor() { }
 

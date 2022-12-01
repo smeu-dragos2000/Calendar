@@ -16,7 +16,7 @@ export class TurismDescriereHanComponent implements OnInit {
   NumarCamere = 0
 
   @Input() public GalerieHan: { image: string, thumbImage: string}[] = galerieHan;
-  @Input() public TabelHan: { tip: string, total: number, disponibil: number, capacitate: number, pret: number}[] = tabelHan;
+  @Input() public TabelHan: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: string[]}[] = tabelHan;
 
   constructor() { }
 

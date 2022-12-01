@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, Input } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import {MatCalendarCellClassFunction} from '@angular/material/datepicker';
@@ -11,10 +11,12 @@ import { DateFilterFn } from '@angular/material/datepicker';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarComponent implements OnInit {
 
 @Input() public PricePerNight: number = 0;
+@Input() public RoomName: string = "";
 @Input() public NumarCamere: number = 1;
 @Input() public zileOcupate: any[] = [];
 @Output() newItemEvent = new EventEmitter<number>();
@@ -25,75 +27,84 @@ addNewItem(value: number) {
 
   today = new Date();
   priceForOneNight = 1000;
+  priceTotal = 0;
+  nightsArray: any[] = [];
+  nights = this.nightsArray.length;
+  bookedDays: Date[] = []
 
+  // Transforms dates Array from (string) to (Date)
+  bookedDaysTransform() {
+    let i = 0;
+      for (i = 0; i < this.zileOcupate.length; i++) {
+        let format = this.zileOcupate[i].split('/');
+        let day = format[0];
+        let month = format[1];
+        let year = format[2];
+        this.bookedDays[i] = new Date(year, month - 1, day);
+    }
+  }
+
+  // Get StartDay & EndDay
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
 
-  calculateNights() {
-    const date1 = this.range.value.start;
-    const date2 = this.range.value.end;
-    if (date1 && date2 && date1 != date2) {
-    let Time = date2.getTime() - date1.getTime();
-    let Days: number = Time / (1000 * 3600 * 24);
-    return  Days
-    }
-    return  0
-  }
+  // calculateNights() {
+  //   // calculate Nights
+  //   const dayStart = this.range.value.start;
+  //   const dayEnd = this.range.value.end;
+  //   if (dayStart && dayEnd && dayStart != dayEnd) {
+  //   let Time = dayEnd.getTime() - dayStart.getTime();
+  //   this.nights = Time / (1000 * 3600 * 24);
+  //   }
+  // }
 
   calculatePrice() {
-    let priceTotal = this.calculateNights() * this.PricePerNight * this.NumarCamere;
-    console.log(this.day1);
-    return priceTotal
-  }
-
-  // My Booked Days
-  bookedDays: any[] = []
-  getBookedDays() {
-
+    this.priceTotal = this.nights * this.PricePerNight * this.NumarCamere;
+    return this.NumarCamere
   }
 
 
-  // Booked Days
-  day1: any = new Date("11/20/2022").getDate()
-  day2: any = new Date("11/24/2022").getDate()
-
-//  Red Class to specified dates
+  // Add class RED to booked days
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     // Only highligh dates inside the month view.
-      const date = cellDate.getDate();
-      // Highlight day1 and day2.
-      return date === this.day1 || date === this.day2 ? 'example-custom-date-class' : '';
+      const time = cellDate.getDate();
+      const day = cellDate.getDate();
+      const month = cellDate.getMonth();
+      const year = cellDate.getFullYear();
+      // Highlight Days.
+      let i = 0;
+      let redClass = ''
+      for (i = 0; i < this.bookedDays.length; i++) {
+        if ( time == this.bookedDays[i].getDate() && month == this.bookedDays[i].getMonth() && year == this.bookedDays[i].getFullYear()) {
+          redClass = 'example-custom-date-class';
+        }
+      }
+      return redClass;
   };
 
   ngOnInit() {
-
+    this.bookedDaysTransform()
   }
 
-  holidayList = [
-    new Date("11/25/2022").getTime(),
-    new Date("11/22/2022").getTime()
- ]
+  //  calculate Nights & Create nights array
+  getDatesBetween (startDate?: any, endDate?: any, includeEndDate?: boolean) {
+    startDate = this.range.value.start;
+    endDate = this.range.value.end;
+    if (startDate && endDate && startDate != endDate) {
+      const dates: Date[] = [];
+      const currentDate = startDate;
+      while (currentDate < endDate) {
+        dates.push(new Date(currentDate));
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+      if (includeEndDate) dates.push(endDate);
+      this.nightsArray =  dates;
+      this.nights = this.nightsArray.length;
 
- myFilter = (d: Date) => {
-  const time=d.getTime()
-  return !this.holidayList.find(x=>x==time)
-}
-
-
-// rangeFilter: DateFilterFn<Date> = (date: Date | null): boolean => {
-//   const dateNumber = date?.getDate();
-//   const dateMonth = date?.getMonth();
-//   const dateYear = date?.getFullYear();
-//   const actualMonth = dateMonth ? dateMonth + 1 : dateMonth;
-//   const actualDate = `${dateYear}-${actualMonth}-${dateNumber}`;
-//   const formattedDate = format(new Date(actualDate), 'yyyy-MM-dd');
-//   const checkValid = this.availableDates.find( (dateItem) => dateItem.date == formattedDate );
-//   if (!checkValid) {
-//     return false;
-//   }
-//   return true;
-// };
+      this.calculatePrice();
+    }
+  };
 
 }

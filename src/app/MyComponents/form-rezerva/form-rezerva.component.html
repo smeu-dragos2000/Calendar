@@ -1,8 +1,10 @@
 <div class="form-container">
-  <br>
-  <h4 class="text-center green">Introduceți detaliile dumneavoastră</h4>
-  <br>
+
   <form [formGroup]="rezervaForm" (ngSubmit)="onSubmit()" *ngIf="showForm">
+
+    <br>
+    <h4 class="text-center green">Introduceți detaliile dumneavoastră</h4>
+    <br>
 
     <div class="form-group">
       <label for="nume">Nume: </label> <span class="red"> *</span>
@@ -15,7 +17,17 @@
     </div>
 
     <div class="form-group">
-      <label for="email">Adresă de e-mail: </label> <span class="red"> *</span>
+      <label for="preNume">Țară: </label> <span class="red"> *</span>
+      <input class="form-control" id="country" formControlName="country" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+    </div>
+
+    <div class="form-group">
+      <label for="preNume">Adresă: </label> <span class="red"> *</span>
+      <input class="form-control" id="address" formControlName="address" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email: </label> <span class="red"> *</span>
       <input class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
 
@@ -23,6 +35,7 @@
       <label for="telefon">Telefon: </label> <span class="red"> *</span>
       <input class="form-control" id="telefon" formControlName="telefon" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
+    <br>
     <div class="form-group">
       <button type="submit" >Rezerva</button>
     </div>

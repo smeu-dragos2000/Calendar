@@ -71,7 +71,7 @@
   <br>
   <div class="row">
     <h5 class="text-center green">Cameră de familie</h5>
-    <app-calendar [PricePerNight]="TabelHan[0].pret"></app-calendar>
+    <app-calendar [PricePerNight]="TabelHan[0].pret" [RoomName]="TabelHan[0].tip" [zileOcupate]="TabelHan[0].zileOcupate"></app-calendar>
   </div>
   <br>
   <div class="row">
@@ -88,7 +88,7 @@
           <option value=5>5</option>
         </select>
       </div>
-      <app-calendar [PricePerNight]="TabelHan[1].pret" [NumarCamere]="+teams.value"></app-calendar>
+      <app-calendar [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[1].tip" [zileOcupate]="TabelHan[1].zileOcupate" [NumarCamere]="+teams.value" ></app-calendar>
   </div>
 
   <app-form-rezerva></app-form-rezerva>
