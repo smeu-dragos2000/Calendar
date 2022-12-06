@@ -10,7 +10,7 @@
       <mat-date-range-picker  #rangePicker [dateClass]="dateClass" >
         <mat-date-range-picker-actions>
           <button mat-button matDateRangePickerCancel>Sterge</button>
-          <button mat-raised-button color="primary" matDateRangePickerApply (click)="getDatesBetween(); addNewItem(NumarCamere)">Aplică</button>
+          <button mat-raised-button color="primary" matDateRangePickerApply (click)="getDatesBetween(); addNewItem(NumarCamere);">Aplică</button>
         </mat-date-range-picker-actions>
       </mat-date-range-picker>
     </mat-form-field>
@@ -24,12 +24,12 @@
       <td>{{ RoomName }}</td>
     </tr>
     <tr class="green lead text-center">
-      <th>Numar</th>
+      <th>Număr</th>
       <td>{{ calculatePrice() }}</td>
     </tr>
     <tr class="green lead text-center">
       <th>Perioada</th>
-      <td>{{ range.value.start | date }} - {{ range.value.end | date }}</td>
+      <td>{{ dayStart | date }} - {{ dayEnd | date }}</td>
     </tr>
     <tr class="green lead text-center">
       <th>Sejur</th>
@@ -39,10 +39,19 @@
       </td>
     </tr>
     <tr class="green lead text-center">
-      <th>Pret</th>
+      <th>Preț</th>
       <td>{{ priceTotal }} Ron</td>
     </tr>
   </table>
+</div>
+
+<!-- Alerta Zile Suprapuse -->
+<div class="container-alerta" *ngIf="showAlerta">
+  <div class="alerta">
+    <h5 class="green text-center" >Ați selectat zile care sunt deja ocupate</h5>
+    <button (click)="hideAlerta()">Modifică</button>
+  </div>
+
 </div>
 
 

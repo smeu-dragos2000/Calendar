@@ -29,8 +29,14 @@ addNewItem(value: number) {
   priceForOneNight = 1000;
   priceTotal = 0;
   nightsArray: any[] = [];
+  dayStart = this.nightsArray[0];
+  dayEnd = this.nightsArray[this.nightsArray.length-1];
   nights = this.nightsArray.length;
   bookedDays: Date[] = []
+  overlayNights:any = [];
+  showAlerta = false;
+
+
 
   // Transforms dates Array from (string) to (Date)
   bookedDaysTransform() {
@@ -50,21 +56,10 @@ addNewItem(value: number) {
     end: new FormControl<Date | null>(null),
   });
 
-  // calculateNights() {
-  //   // calculate Nights
-  //   const dayStart = this.range.value.start;
-  //   const dayEnd = this.range.value.end;
-  //   if (dayStart && dayEnd && dayStart != dayEnd) {
-  //   let Time = dayEnd.getTime() - dayStart.getTime();
-  //   this.nights = Time / (1000 * 3600 * 24);
-  //   }
-  // }
-
   calculatePrice() {
     this.priceTotal = this.nights * this.PricePerNight * this.NumarCamere;
     return this.NumarCamere
   }
-
 
   // Add class RED to booked days
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
@@ -83,6 +78,24 @@ addNewItem(value: number) {
       }
       return redClass;
   };
+
+  filterNights() {
+    let array1 = this.nightsArray
+    let array2 = this.bookedDays
+    for (let i = 0; i < array1.length; i++) {
+      for (let j = 0; j < array2.length; j++) {
+        if (array1[i].toString() == array2[j].toString()){
+          this.overlayNights.push(array1[i]);
+        }
+      }
+    }
+    if (this.overlayNights.length > 0) {
+      this.showAlerta = true;
+    }
+    else {
+      this.showAlerta = false;
+    }
+  }
 
   ngOnInit() {
     this.bookedDaysTransform()
@@ -103,8 +116,20 @@ addNewItem(value: number) {
       this.nightsArray =  dates;
       this.nights = this.nightsArray.length;
 
+      this.dayStart = this.nightsArray[0];
+      this.dayEnd = this.nightsArray[this.nightsArray.length-1];
+
       this.calculatePrice();
+      this.filterNights();
     }
   };
+
+  hideAlerta() {
+    this.showAlerta = false;
+    this.overlayNights = []
+    this.range.value.end = null
+    this.range.value.start = null
+
+  }
 
 }
