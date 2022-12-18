@@ -2,8 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 
 
 import  galerieAna  from '../../../assets/Data-json/Galerie-Ana.json';
-import  tabelAna  from '../../../assets/Data-json/tabel-ana.json';
+// import  tabelAna  from '../../../assets/Data-json/tabel-ana.json';
 
+import  tabelAna  from '../../../assets/Data-json/tabel-ana - Copy.json';
+
+
+import { ZileOcupate } from '../../MyClass/ZileOcupate';
 
 @Component({
   selector: 'app-turism-descriere-ana',
@@ -19,7 +23,8 @@ export class TurismDescriereAnaComponent implements OnInit {
   displayCalendar = false;
 
   @Input() public GalerieAna: { image: string, thumbImage: string}[] = galerieAna;
-  @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: string[]}[] = tabelAna;
+  // @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: string[]}[] = tabelAna;
+  @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: ZileOcupate[]}[] = tabelAna;
 
 
 

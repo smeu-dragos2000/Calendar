@@ -1,0 +1,23 @@
+[
+  {
+    "tip": "Apartament 4 camere",
+    "total": 1,
+    "disponibil": 1,
+    "capacitate" : 8,
+    "pret": 1000,
+    "zileOcupate": [
+      {
+        "ziOcupata": "06/12/2022",
+        "numarCamereOcupate": 1
+      },
+      {
+        "ziOcupata": "12/12/2022",
+        "numarCamereOcupate": 1
+      },
+      {
+        "ziOcupata": "25/12/2022",
+        "numarCamereOcupate": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "tip": "Cameră de familie",
+    "total": 1,
+    "disponibil": 1,
+    "capacitate" : 3,
+    "pret": 300,
+    "zileOcupate": [
+      {
+        "ziOcupata": "06/12/2022",
+        "numarCamereOcupate": 1
+      },
+      {
+        "ziOcupata": "12/12/2022",
+        "numarCamereOcupate": 1
+      },
+      {
+        "ziOcupata": "25/12/2022",
+        "numarCamereOcupate": 1
+      }
+    ]
+  },
+  {
+    "tip": "Cameră dublă",
+    "total": 5,
+    "disponibil": 5,
+    "capacitate" : 2,
+    "pret": 200,
+    "zileOcupate": [
+      {
+        "ziOcupata": "07/12/2022",
+        "numarCamereOcupate": 2
+      },
+      {
+        "ziOcupata": "13/12/2022",
+        "numarCamereOcupate": 3
+      },
+      {
+        "ziOcupata": "25/12/2022",
+        "numarCamereOcupate": 1
+      }
+    ]
+  }
+]

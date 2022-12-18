@@ -18,35 +18,44 @@ export class CalendarComponent implements OnInit {
 @Input() public PricePerNight: number = 0;
 @Input() public RoomName: string = "";
 @Input() public NumarCamere: number = 1;
+@Input() public NumarCamereOcupate: number = 0;
+// @Input() public selectedNumberOfRooms: number = 0;
 @Input() public zileOcupate: any[] = [];
 @Output() newItemEvent = new EventEmitter<number>();
 
 addNewItem(value: number) {
   this.newItemEvent.emit(value);
 }
-
   today = new Date();
-  priceForOneNight = 1000;
+  priceForOneNight = 0;
   priceTotal = 0;
   nightsArray: any[] = [];
   dayStart = this.nightsArray[0];
-  dayEnd = this.nightsArray[this.nightsArray.length-1];
+  // dayEnd = this.nightsArray[this.nightsArray.length];
+  dayEnd: any = 0;
   nights = this.nightsArray.length;
   bookedDays: Date[] = []
-  overlayNights:any = [];
+  overlayNights: any = [];
   showAlerta = false;
 
+  camereLiberePeNoapte = 5;
+  NumarCamereLibere = 5 - this.NumarCamereOcupate;
 
 
   // Transforms dates Array from (string) to (Date)
   bookedDaysTransform() {
+    let numarCamereOcupatePerNoapte;
     let i = 0;
       for (i = 0; i < this.zileOcupate.length; i++) {
-        let format = this.zileOcupate[i].split('/');
+        let format = this.zileOcupate[i].ziOcupata.split('/');
         let day = format[0];
         let month = format[1];
         let year = format[2];
         this.bookedDays[i] = new Date(year, month - 1, day);
+
+        numarCamereOcupatePerNoapte = this.zileOcupate[i].numarCamereOcupate;
+        // console.log(numarCamereOcupatePerNoapte)
+        console.log(this.zileOcupate[i].numarCamereOcupate);
     }
   }
 
@@ -68,6 +77,9 @@ addNewItem(value: number) {
       const day = cellDate.getDate();
       const month = cellDate.getMonth();
       const year = cellDate.getFullYear();
+
+      // this.camereLiberePeNoapte =  ;
+
       // Highlight Days.
       let i = 0;
       let redClass = ''
@@ -80,8 +92,9 @@ addNewItem(value: number) {
   };
 
   filterNights() {
-    let array1 = this.nightsArray
-    let array2 = this.bookedDays
+    let array1 = this.nightsArray;
+    let array2 = this.bookedDays;
+
     for (let i = 0; i < array1.length; i++) {
       for (let j = 0; j < array2.length; j++) {
         if (array1[i].toString() == array2[j].toString()){
@@ -89,7 +102,7 @@ addNewItem(value: number) {
         }
       }
     }
-    if (this.overlayNights.length > 0) {
+    if (this.overlayNights.length > 0 && this.NumarCamere > this.NumarCamereLibere) {
       this.showAlerta = true;
     }
     else {
@@ -117,7 +130,8 @@ addNewItem(value: number) {
       this.nights = this.nightsArray.length;
 
       this.dayStart = this.nightsArray[0];
-      this.dayEnd = this.nightsArray[this.nightsArray.length-1];
+      // this.dayEnd = this.nightsArray[this.nightsArray.length-1];
+      this.dayEnd = this.range.value.end;
 
       this.calculatePrice();
       this.filterNights();
@@ -129,7 +143,5 @@ addNewItem(value: number) {
     this.overlayNights = []
     this.range.value.end = null
     this.range.value.start = null
-
   }
-
 }
