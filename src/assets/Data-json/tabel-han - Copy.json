@@ -7,16 +7,16 @@
     "pret": 300,
     "zileOcupate": [
       {
-        "ziOcupata": "06/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "06/12/2022",
+        "noBusyRooms": 1
       },
       {
-        "ziOcupata": "12/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "12/12/2022",
+        "noBusyRooms": 1
       },
       {
-        "ziOcupata": "25/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "25/12/2022",
+        "noBusyRooms": 1
       }
     ]
   },
@@ -28,16 +28,18 @@
     "pret": 200,
     "zileOcupate": [
       {
-        "ziOcupata": "07/12/2022",
-        "numarCamereOcupate": 2
+        "busyDay": "07/12/2022",
+        "noBusyRooms": 2,
+        "type":"family"
       },
       {
-        "ziOcupata": "13/12/2022",
-        "numarCamereOcupate": 3
+        "busyDay": "13/12/2022",
+        "noBusyRooms": 3,
+        "type":"double"
       },
       {
-        "ziOcupata": "25/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "25/12/2022",
+        "noBusyRooms": 1
       }
     ]
   }

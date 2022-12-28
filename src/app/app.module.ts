@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 // Material MatCalendar(Datepicker)
 import { MatNativeDateModule } from '@angular/material/core';
@@ -32,6 +33,9 @@ import { TurismAnaComponent } from './MyPages/turism-ana/turism-ana.component';
 import { TurismDescriereAnaComponent } from './MyComponents/turism-descriere-ana/turism-descriere-ana.component';
 import { TurismHanComponent } from './MyPages/turism-han/turism-han.component';
 import { TurismDescriereHanComponent } from './MyComponents/turism-descriere-han/turism-descriere-han.component';
+import { AdminLoginComponent } from './MyPages/admin-login/admin-login.component';
+import { AdminComponent } from './MyPages/admin/admin.component';
+
 
 
 @NgModule({
@@ -49,12 +53,15 @@ import { TurismDescriereHanComponent } from './MyComponents/turism-descriere-han
     TurismDescriereAnaComponent,
     TurismHanComponent,
     TurismDescriereHanComponent,
+    AdminLoginComponent,
+    AdminComponent,
 
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,

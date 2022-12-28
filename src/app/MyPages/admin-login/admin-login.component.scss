@@ -1,0 +1,18 @@
+.login-container {
+  margin: 2rem auto;
+  padding: 2rem;
+  width: clamp(350px, 60%, 600px);
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  // align-items: center;
+
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px grey;
+
+  button {
+    margin: auto;
+  }
+}

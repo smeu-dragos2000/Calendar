@@ -7,16 +7,16 @@
     "pret": 1000,
     "zileOcupate": [
       {
-        "ziOcupata": "06/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "06/12/2022",
+        "noBusyRooms": 1
       },
       {
-        "ziOcupata": "12/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "12/12/2022",
+        "noBusyRooms": 1
       },
       {
-        "ziOcupata": "25/12/2022",
-        "numarCamereOcupate": 1
+        "busyDay": "25/12/2022",
+        "noBusyRooms": 1
       }
     ]
   }

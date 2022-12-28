@@ -8,32 +8,32 @@
 
     <div class="form-group">
       <label for="nume">Nume: </label> <span class="red"> *</span>
-      <input class="form-control" id="nume" formControlName="nume" [ngClass]="{'is-invalid': submitted}">
+      <input class="form-control" id="nume" formControlName="lastNameClient" [ngClass]="{'is-invalid': submitted}">
     </div>
 
     <div class="form-group">
       <label for="preNume">Prenume: </label> <span class="red"> *</span>
-      <input class="form-control" id="preNume" formControlName="preNume" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+      <input class="form-control" id="preNume" formControlName="firstNameClient" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
 
     <div class="form-group">
       <label for="preNume">Țară: </label> <span class="red"> *</span>
-      <input class="form-control" id="country" formControlName="country" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+      <input class="form-control" id="country" formControlName="countryClient" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
 
     <div class="form-group">
       <label for="preNume">Adresă: </label> <span class="red"> *</span>
-      <input class="form-control" id="address" formControlName="address" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+      <input class="form-control" id="address" formControlName="addressClient" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
 
     <div class="form-group">
       <label for="email">Email: </label> <span class="red"> *</span>
-      <input class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+      <input class="form-control" id="email" formControlName="emailClient" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
 
     <div class="form-group">
       <label for="telefon">Telefon: </label> <span class="red"> *</span>
-      <input class="form-control" id="telefon" formControlName="telefon" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
+      <input class="form-control" id="telefon" formControlName="phoneClient" [ngClass]="{'is-invalid': submitted && rezervaForm.controls}">
     </div>
     <br>
     <div class="form-group">

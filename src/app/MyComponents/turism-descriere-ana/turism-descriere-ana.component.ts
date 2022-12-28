@@ -1,11 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { BusyDayService } from 'src/app/MyService/busy-day.service';
 
 import  galerieAna  from '../../../assets/Data-json/Galerie-Ana.json';
-// import  tabelAna  from '../../../assets/Data-json/tabel-ana.json';
 
 import  tabelAna  from '../../../assets/Data-json/tabel-ana - Copy.json';
-
 
 import { ZileOcupate } from '../../MyClass/ZileOcupate';
 
@@ -22,23 +20,32 @@ export class TurismDescriereAnaComponent implements OnInit {
 
   displayCalendar = false;
 
+  zileOcupate: any;
+
   @Input() public GalerieAna: { image: string, thumbImage: string}[] = galerieAna;
   // @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: string[]}[] = tabelAna;
   @Input() public TabelAna: { tip: string, total: number, disponibil: number, capacitate: number, pret: number, zileOcupate: ZileOcupate[]}[] = tabelAna;
 
+  constructor(private busyDayService: BusyDayService){}
 
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.getAllBusyDays()
   }
+
+  getAllBusyDays(){
+    return this.busyDayService.getAllBusyDaysAna().subscribe((res)=>{
+      this.zileOcupate = res;
+    })
+  }
+
+  // bookDaysAna(data: ZileOcupate){
+  //   return this.busyDayService.bookDaysAna(data).subscribe()
+  // }
+
   showCalendar() {
     this.displayCalendar = true;
   }
   closeCalendar() {
     this.displayCalendar = false;
   }
-
 }

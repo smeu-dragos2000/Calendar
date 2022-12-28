@@ -1,4 +1,5 @@
 export interface ZileOcupate {
-  ziOcupata: string;
-  numarCamereOcupate: number;
+  busyDay: string;
+  noBusyRooms: number;
+  type: string;
 }

@@ -26,7 +26,7 @@ export class FooterComponent {
     router.events.subscribe((val) => {
       if(val instanceof NavigationEnd) {
         this.myRoute = this.location.path().toString();
-        console.log(this.myRoute);
+        // console.log(this.myRoute);
       }
     });
   }

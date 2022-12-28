@@ -1,0 +1,17 @@
+.container-pensiune {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  .pensiune {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: clamp(300px, 100%, 500px);
+    min-height: 360px;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px grey;
+  }
+}
+
+

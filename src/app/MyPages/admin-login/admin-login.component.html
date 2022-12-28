@@ -1,0 +1,48 @@
+<!-- Header -->
+<section class="header-container">
+  <!-- Background image -->
+  <img class="header-image-background" src="assets/images/Header-Admin.jpg" alt="">
+  <div class="gradient"></div>
+
+  <!-- Header content -->
+  <div class="container header-content">
+    <div class="header-logo">
+      <img src="assets/images/Logo Ginivisa.png" alt="">
+    </div>
+    <!-- Header Title -->
+    <div class="header-title">
+      <h1 class="blue">Pentru sănătate și relaxare</h1>
+      <h2 class="green">Fructe proaspete de pe valea Bistritei.</h2>
+      <h2  class="green">Camping și cazare în județul Gorj.</h2>
+    </div>
+  </div>
+</section>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="login-container">
+    <h5 class="text-center green">Login ca Administrator</h5>
+    <br>
+
+    <form class="example-form" [formGroup]="FormGroup">
+      <div class="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>User</mat-label>
+          <input matInput placeholder="User" name="username" formControlName="username" required>
+          </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Parolă</mat-label>
+        <input matInput placeholder="Enter your password" value="" name="password" type="password" formControlName="password" required>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button (click)="login()">Submit</button>
+    </form>
+  </div>
+  <br><br><br>
+
+
+</div>

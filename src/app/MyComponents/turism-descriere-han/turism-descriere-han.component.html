@@ -71,7 +71,7 @@
   <br>
   <div class="row">
     <h5 class="text-center green">Cameră de familie</h5>
-    <app-calendar [PricePerNight]="TabelHan[0].pret" [RoomName]="TabelHan[0].tip" [zileOcupate]="TabelHan[0].zileOcupate"></app-calendar>
+    <app-calendar [PricePerNight]="TabelHan[0].pret" [RoomName]="TabelHan[0].tip" [TotalRooms]="TabelHan[0].total" [zileOcupate]="zileOcupateFamily"></app-calendar>
   </div>
   <br>
   <div class="row">
@@ -79,16 +79,16 @@
 
       <div class="row text-center d-inline-block">
         <h6 class="d-inline green">Număr Camere: </h6>
-        <select #NumarCamere (change)="onSelected(NumarCamere.value)" id="numarCamere" class="form-control d-inline">
-          <option value=0>0</option>
-          <option selected value=1>1</option>
+        <select  #NumarCamere (change)="onSelected(NumarCamere.value)" id="numarCamere" class="form-control d-inline">
+          <option class="zero" selected value=0>0</option>
+          <option value=1>1</option>
           <option value=2>2</option>
           <option value=3>3</option>
           <option value=4>4</option>
           <option value=5>5</option>
-        </select>
+        </select> <span class="green">/ 5</span>
       </div>
-      <app-calendar [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[1].tip" [zileOcupate]="TabelHan[1].zileOcupate" [NumarCamere]="+NumarCamere.value"></app-calendar>
+      <app-calendar [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[1].tip" [TotalRooms]="TabelHan[1].total" [zileOcupate]="zileOcupateDouble" [selectedNumberOfRooms]="+NumarCamere.value"></app-calendar>
   </div>
 
   <app-form-rezerva></app-form-rezerva>

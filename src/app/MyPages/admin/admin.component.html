@@ -1,0 +1,59 @@
+<!-- Header -->
+<section class="header-container">
+  <!-- Background image -->
+  <img class="header-image-background" src="assets/images/Header-Admin.jpg" alt="">
+  <div class="gradient"></div>
+
+  <!-- Header content -->
+  <div class="container header-content">
+    <div class="header-logo">
+      <img src="assets/images/Logo Ginivisa.png" alt="">
+    </div>
+    <!-- Header Title -->
+    <div class="header-title">
+      <h1 class="blue">Pentru sănătate și relaxare</h1>
+      <h2 class="green">Fructe proaspete de pe valea Bistritei.</h2>
+      <h2  class="green">Camping și cazare în județul Gorj.</h2>
+    </div>
+  </div>
+</section>
+
+<!-- Page Content -->
+<div class="container">
+
+<div class="container-pensiune">
+
+  <div class="pensiune">
+    <h3 class="text-center green">Casa Ana</h3>
+    <div class="camera">
+      <h5 class="text-center green">Apartament</h5>
+      <app-calendar></app-calendar>
+    </div>
+
+
+  </div>
+
+  <div class="pensiune">
+    <h3 class="text-center green">Hanul Vânătorului</h3>
+    <div class="camera">
+      <h5 class="text-center green">Cameră de familie</h5>
+      <app-calendar></app-calendar>
+    </div>
+    <div class="camera text-center">
+      <h5 class="text-center green">Cameră dublă</h5>
+      <div class="row text-center d-inline-block">
+        <h6 class="d-inline green">Număr Camere: </h6>
+        <select  #NumarCamere  id="numarCamere" class="form-control d-inline">
+          <option class="zero" selected value=0>0</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select> <span class="green">/ 5</span>
+      </div>
+      <app-calendar></app-calendar>
+    </div>
+  </div>
+</div>
+</div>
