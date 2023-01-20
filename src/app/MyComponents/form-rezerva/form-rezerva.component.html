@@ -41,4 +41,20 @@
     </div>
 
   </form>
+  <br>
+
+</div>
+
+<!-- Alerta Zile Suprapuse -->
+<div class="container-alerta" *ngIf="showAfterForm">
+  <div class="alerta">
+    <h6 class="green text-center" >Vă multumim pentru rezervare!</h6>
+    <h6 class="green text-center" >V-am trimis pe email o copie a formularului de rezervare (PDF).</h6>
+    <div class="d-flex justify-content-around">
+      <button (click)="message()">Înapoi</button>
+      <button (click)="message()">PDF <mat-icon>cloud_download</mat-icon></button>
+    </div>
+
+  </div>
+
 </div>

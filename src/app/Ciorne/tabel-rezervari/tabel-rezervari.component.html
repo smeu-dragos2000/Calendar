@@ -1,0 +1,186 @@
+
+
+<div class="container table-container">
+
+  <!-- Table Vechi -->
+  <!-- <table class="table-large">
+    <thead>
+      <tr class="green lead">
+        <th>Nume</th>
+        <th>Prenume</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Apartament</th>
+
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Șterge</th>
+        <th>PDF</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let client of clients">
+      <td>{{client.client.lastNameClient}}</td>
+      <td>{{client.client.firstNameClient}}</td>
+      <td>{{client.reservation.checkIn}}</td>
+      <td>{{client.reservation.checkOut}}</td>
+      <td>{{client.reservation.noRooms}}</td>
+      <td>{{client.client.emailClient}}</td>
+      <td>{{client.client.phoneClient}}</td>
+      <td ><mat-icon>delete</mat-icon></td>
+      <td ><mat-icon>cloud_download</mat-icon></td>
+    </tr>
+  </table> -->
+
+  <!-- Table Display Large -->
+
+  <div class="table-large-screen">
+    <table mat-table [dataSource]="clients" class="mat-elevation-z8 demo-table">
+      <!-- Nume -->
+      <ng-container matColumnDef="Nume">
+        <th mat-header-cell *matHeaderCellDef> Nume </th>
+        <td mat-cell *matCellDef="let element"> {{element.client.lastNameClient}} </td>
+      </ng-container>
+      <!-- Prenume -->
+      <ng-container matColumnDef="Prenume">
+        <th mat-header-cell *matHeaderCellDef> Prenume </th>
+        <td mat-cell *matCellDef="let element"> {{element.client.firstNameClient}} </td>
+      </ng-container>
+      <!-- Check-In -->
+      <ng-container matColumnDef="Check-In">
+        <th mat-header-cell *matHeaderCellDef> Check-In </th>
+        <td mat-cell *matCellDef="let element"> {{element.reservation.checkIn}} </td>
+      </ng-container>
+      <!-- Check-Out -->
+      <ng-container matColumnDef="Check-Out">
+        <th mat-header-cell *matHeaderCellDef> Check-Out </th>
+        <td mat-cell *matCellDef="let element"> {{element.reservation.checkOut}} </td>
+      </ng-container>
+      <!-- Cameră Ana-->
+      <ng-container matColumnDef="Camera">
+        <th mat-header-cell *matHeaderCellDef> Cameră </th>
+        <td mat-cell *matCellDef="let element"> {{element.reservation.noRooms}} </td>
+      </ng-container>
+      <!-- Email -->
+      <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.client.emailClient}} </td>
+      </ng-container>
+      <!-- Telefon -->
+      <ng-container matColumnDef="Telefon">
+        <th mat-header-cell *matHeaderCellDef> Telefon </th>
+        <td mat-cell *matCellDef="let element"> {{element.client.phoneClient}} </td>
+      </ng-container>
+      <!-- PDF -->
+      <ng-container matColumnDef="Download">
+        <th mat-header-cell *matHeaderCellDef> PDF </th>
+        <td mat-cell *matCellDef="let element"> <mat-icon class="td-button-download">cloud_download</mat-icon> </td>
+      </ng-container>
+      <!-- Sterge -->
+      <ng-container matColumnDef="Sterge">
+        <th mat-header-cell *matHeaderCellDef> Șterge </th>
+        <td mat-cell *matCellDef="let element"> <mat-icon class="td-button-delete">delete</mat-icon> </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 50]"
+              aria-label="Select page">
+</mat-paginator>
+  </div>
+
+
+
+  <!-- Table Display Small -->
+<div class="table-small-screen">
+  <div class="client" *ngFor="let client of clients">
+
+    <div class="row-table">
+      <div class="title">
+        Nume
+      </div>
+      <div class="data">
+        {{client.client.lastNameClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Prenume
+      </div>
+      <div class="data">
+        {{client.client.firstNameClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Check-In
+      </div>
+      <div class="data">
+        {{client.reservation.checkIn}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Check-Out
+      </div>
+      <div class="data">
+        {{client.reservation.checkOut}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Apartament
+      </div>
+      <div class="data">
+        {{client.reservation.noRooms}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Email
+      </div>
+      <div class="data">
+        {{client.client.emailClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Telefon
+      </div>
+      <div class="data">
+        {{client.client.phoneClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        PDF
+      </div>
+      <div class="data button-PDF">
+        <span><mat-icon class="td-button-download">cloud_download</mat-icon></span>
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Șterge
+      </div>
+      <div class="data button-delete">
+        <span><mat-icon class="td-button-delete">delete</mat-icon></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+<br>
+
+</div>

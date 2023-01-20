@@ -1,0 +1,52 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+  <br><h4 class="text-center green">Contactează-ne</h4>
+
+  <div class="form-group">
+    <label for="nume">Nume: </label> <span class="red"> *</span>
+    <input class="form-control" id="nume" formControlName="nameContact" [ngClass]="{'is-invalid': submitted}">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email: </label> <span class="red"> *</span>
+    <input class="form-control" id="email" formControlName="emailContact" [ngClass]="{'is-invalid': submitted && contactForm.controls}">
+  </div>
+
+  <div class="form-group">
+    <label for="telefon">Telefon: </label> <span class="red"></span>
+    <input class="form-control" id="telefon" formControlName="phoneContact">
+  </div>
+
+  <div class="form-group">
+    <label for="preNume">Subiect: </label> <span class="red"> *</span> <br>
+    <div class="subject">
+      <div>
+        <input type="radio" value="Agricultură" id="subiect" formControlName="subjectContact" [ngClass]="{'is-invalid': submitted && contactForm.controls}">
+        <span>Agricultură</span>
+      </div>
+      <div>
+        <input type="radio" value="Turism" id="turism" formControlName="subjectContact" [ngClass]="{'is-invalid': submitted && contactForm.controls}">
+      <span>Turism</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="mesaj">Mesaj: </label> <span class="red"> *</span>
+    <textarea class="form-control" id="mesaj" formControlName="messageContact" rows="8"  [ngClass]="{'is-invalid': submitted && contactForm.controls}"></textarea>
+  </div>
+  <br>
+  <!-- <div class="form-group"> -->
+    <button type="submit">Trimite</button>
+  <!-- </div> -->
+</form>
+
+
+<!-- PopUp Message After Send -->
+<div class="after-form" *ngIf="showAfterForm">
+  <div class="message-container green">
+    <h6>Vă mulțumim pentru mesaj!</h6>
+    <h6>Vă vom răspunde în curând.</h6>
+    <button (click)="closeAfterForm()">Închide</button>
+  </div>
+</div>

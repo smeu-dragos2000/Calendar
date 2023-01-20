@@ -1,0 +1,360 @@
+<!-- Table Display Large -->
+<div class="table-large-screen table-container">
+ <table>
+  <thead>
+    <tr class="green lead">
+      <th>Nume</th>
+      <th>Prenume</th>
+      <th>Check-In</th>
+      <th>Check-Out</th>
+      <th>Family</th>
+      <th>Single</th>
+      <th>Double</th>
+      <th>Email</th>
+      <th>Telefon</th>
+      <th>Acțiuni</th>
+    </tr>
+  </thead>
+  <ng-container class="ng-container" *ngFor="let client of clients">
+    <tr class="table-row">
+      <td  rowspan="3">{{client.client.lastNameClient}}</td>
+      <td rowspan="3">{{client.client.firstNameClient}}</td>
+
+      <td>{{client.reservationHanFamily.checkIn}}</td>
+      <td>{{client.reservationHanFamily.checkOut}}</td>
+      <td>{{client.reservationHanFamily.noRooms}}</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td rowspan="3">{{client.client.emailClient}}</td>
+      <td rowspan="3">{{client.client.phoneClient}}</td>
+      <td class="actions" rowspan="3">
+        <!-- <mat-select id="action" class="form-control">
+          <mat-option matSuffix value=PDF id="pdf">PDF</mat-option>
+          <mat-option matSuffix value=Edit id="edit">Edit</mat-option>
+          <mat-option matSuffix value=Sterge id="delete">Sterge</mat-option>
+        </mat-select>
+        <button>OK</button> -->
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Actiuni
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">PDF</a></li>
+            <li><a class="dropdown-item" href="#">Edit</a></li>
+            <li><a class="dropdown-item" href="#">Sterge</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>{{client.reservationHanSingle.checkIn}}</td>
+      <td>{{client.reservationHanSingle.checkOut}}</td>
+      <td>&nbsp;</td>
+      <td>{{client.reservationHanSingle.noRooms}}</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td>{{client.reservationHanDouble.checkIn}}</td>
+      <td>{{client.reservationHanDouble.checkOut}}</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>{{client.reservationHanDouble.noRooms}}</td>
+    </tr>
+  </ng-container>
+ </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-small-screen">
+  <div class="client" *ngFor="let client of clients">
+
+    <div class="row-table">
+      <div class="title">
+        Nume
+      </div>
+      <div class="data">
+        {{client.client.lastNameClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Prenume
+      </div>
+      <div class="data">
+        {{client.client.firstNameClient}}
+      </div>
+    </div>
+
+    <!-- Family -->
+    <div class="room">
+      <div class="row-table">
+        <div class="title">
+          Camera
+        </div>
+        <div class="data room-type">
+          Family
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Check
+        </div>
+        <div class="data">
+          {{client.reservationHanFamily.checkIn}} - {{client.reservationHanFamily.checkOut}}
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Nr. Camere
+        </div>
+        <div class="data">
+          {{client.reservationHanFamily.noRooms}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Double -->
+    <div class="room">
+      <div class="row-table">
+        <div class="title">
+          Camera
+        </div>
+        <div class="data room-type">
+          Double
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Check
+        </div>
+        <div class="data">
+          {{client.reservationHanDouble.checkIn}} - {{client.reservationHanDouble.checkOut}}
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Nr. Camere
+        </div>
+        <div class="data">
+          {{client.reservationHanDouble.noRooms}}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row-table">
+      <div class="title">
+        Email
+      </div>
+      <div class="data">
+        {{client.client.emailClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <div class="title">
+        Telefon
+      </div>
+      <div class="data">
+        {{client.client.phoneClient}}
+      </div>
+    </div>
+
+    <div class="row-table">
+      <!-- <div class="title">
+        Actiuni
+      </div> -->
+      <div class="actions">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Actiuni
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">PDF</a></li>
+            <li><a class="dropdown-item" href="#">Edit</a></li>
+            <li><a class="dropdown-item" href="#">Sterge</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Table Display Small -->
+  <div class="table-small-screen">
+    <div class="client" *ngFor="let client of clients">
+
+      <div class="row-table">
+        <div class="title">
+          Nume
+        </div>
+        <div class="data">
+          {{client.client.lastNameClient}}
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Prenume
+        </div>
+        <div class="data">
+          {{client.client.firstNameClient}}
+        </div>
+      </div>
+
+      <!-- Family -->
+      <div class="room">
+        <div class="row-table">
+          <div class="title">
+            Camera
+          </div>
+          <div class="data room-type">
+            Family
+          </div>
+        </div>
+
+        <div class="row-table">
+          <div class="title">
+            Check-In
+          </div>
+          <div class="data">
+            {{client.reservationHanFamily.checkIn}}
+          </div>
+        </div>
+
+        <div class="row-table">
+          <div class="title">
+            Check-Out
+          </div>
+          <div class="data">
+            {{client.reservationHanFamily.checkOut}}
+          </div>
+        </div>
+
+        <div class="row-table">
+          <div class="title">
+            Nr. Camere
+          </div>
+          <div class="data">
+            {{client.reservationHanFamily.noRooms}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Double -->
+      <div class="room">
+        <div class="row-table">
+          <div class="title">
+            Camera
+          </div>
+          <div class="data room-type">
+            Double
+          </div>
+        </div>
+
+        <div class="row-table">
+          <div class="title">
+            Check-In
+          </div>
+          <div class="data">
+            {{client.reservationHanDouble.checkIn}}
+          </div>
+        </div>
+
+        <div class="row-table">
+          <div class="title">
+            Check-Out
+          </div>
+          <div class="data">
+            {{client.reservationHanDouble.checkOut}}
+          </div>
+        </div>
+
+        <div class="row-table">
+          <div class="title">
+            Nr. Camere
+          </div>
+          <div class="data">
+            {{client.reservationHanDouble.noRooms}}
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row-table">
+        <div class="title">
+          Email
+        </div>
+        <div class="data">
+          {{client.client.emailClient}}
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Telefon
+        </div>
+        <div class="data">
+          {{client.client.phoneClient}}
+        </div>
+      </div>
+
+      <div class="row-table">
+        <div class="title">
+          Actiuni
+        </div>
+        <div class="data button-delete">
+          <span><mat-icon class="td-button-delete">delete</mat-icon></span>
+        </div>
+      </div>
+
+    </div>
+  </div>

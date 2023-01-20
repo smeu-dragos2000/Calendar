@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {Router} from '@angular/router';
 import { BusyDayService } from 'src/app/MyService/busy-day.service';
 
 @Component({
@@ -15,10 +16,10 @@ export class FormRezervaComponent implements OnInit {
   submitted = false;
   showForm = true;
 
+  showAfterForm = false;
 
-constructor (private FormBuilder: FormBuilder, private busyDayService: BusyDayService) {}
 
-
+constructor (private FormBuilder: FormBuilder, private busyDayService: BusyDayService, private router: Router) {}
 
   ngOnInit() {
     this.rezervaForm = this.FormBuilder.group({
@@ -29,10 +30,7 @@ constructor (private FormBuilder: FormBuilder, private busyDayService: BusyDaySe
       emailClient: ['', Validators.required],
       phoneClient: ['', [Validators.required, Validators.minLength(9)]]
     })
-
   }
-
-
 
   onSubmit() {
     this.submitted = true;
@@ -53,18 +51,19 @@ constructor (private FormBuilder: FormBuilder, private busyDayService: BusyDaySe
         this.busyDayService.bookDaysHanFamily()
         this.busyDayService.bookDaysHanDouble()
         this.busyDayService.addReservationHan()
-
-        // if(this.busyDayService.reservationHan.reservationFamily.typeRoom?.toLowerCase()) {
-        //   this.busyDayService.bookDaysHanFamily()
-        // }
-        // else if(this.busyDayService.reservationHan.reservationDouble.typeRoom?.toLowerCase()) {
-        //   this.busyDayService.bookDaysHanDouble()
-        // }
-      }
-      else{
-        console.log("nu contine")
       }
     }
+    this.showAfterForm = true;
   }
 
+  message() {
+    // this.router.navigate(['/'])
+    this.reloadPage()
+    this.showAfterForm = true;
+  }
+  reloadPage(){
+    window.location.reload()
+  }
 }
+
+

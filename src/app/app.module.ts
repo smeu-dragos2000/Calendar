@@ -14,11 +14,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MAT_DATE_LOCALE} from '@angular/material/core';
+// Material Table(Admin Table)
+import { MatTableModule } from '@angular/material/table';
 
 // Swiper
 import { SwiperModule } from 'swiper/angular';
 // ng-image-slider
 import { NgImageSliderModule } from 'ng-image-slider';
+
+
 
 // Components & Pages
 import { HeaderComponent } from './MyComponents/header/header.component';
@@ -35,8 +39,18 @@ import { TurismHanComponent } from './MyPages/turism-han/turism-han.component';
 import { TurismDescriereHanComponent } from './MyComponents/turism-descriere-han/turism-descriere-han.component';
 import { AdminLoginComponent } from './MyPages/admin-login/admin-login.component';
 import { AdminComponent } from './MyPages/admin/admin.component';
+import { ContactComponent } from './MyPages/contact/contact.component';
+import { ContactFormComponent } from './MyComponents/contact-form/contact-form.component';
+import { TabelRezervariAnaComponent } from './MyComponents/tabel-rezervari-ana/tabel-rezervari-ana.component';
+import { TabelRezervariHanComponent } from './MyComponents/tabel-rezervari-han/tabel-rezervari-han.component';
+import { TabelRezervariComponent } from './Ciorne/tabel-rezervari/tabel-rezervari.component';
 
 
+
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import { DataSource } from '@angular/cdk/collections';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -55,6 +69,11 @@ import { AdminComponent } from './MyPages/admin/admin.component';
     TurismDescriereHanComponent,
     AdminLoginComponent,
     AdminComponent,
+    ContactComponent,
+    ContactFormComponent,
+    TabelRezervariAnaComponent,
+    TabelRezervariHanComponent,
+    TabelRezervariComponent,
 
   ],
   imports: [
@@ -70,9 +89,10 @@ import { AdminComponent } from './MyPages/admin/admin.component';
     MatInputModule,
     MatFormFieldModule,
     SwiperModule,
-    NgImageSliderModule
-
-
+    NgImageSliderModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSelectModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'ro-RO' }],
   bootstrap: [AppComponent]

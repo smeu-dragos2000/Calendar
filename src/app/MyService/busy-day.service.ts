@@ -16,9 +16,11 @@ export class BusyDayService {
   public reservationHan: ReservationHan = new ReservationHan();
   public selectedNightsArrayString: any[] = [];
   public selectedNightsArrayDoubleString: any[] = [];
+  public selectedNightsArraySingleString: any[] = [];
   public selectedNumberOfRooms: number = 1;
+  public showRezervaForm: boolean = false;
 
-  private publicHttpHeaders= {
+  private publicHttpHeaders = {
     headers: new HttpHeaders({'content-type':'application/json'})
   };
 
@@ -28,14 +30,24 @@ export class BusyDayService {
     return this._http.get(this.baseUrl + '/busyDayAna', this.publicHttpHeaders)
   }
   getAllBusyDaysHanDouble(){
+    console.log('/busyDayHanDouble')
     return this._http.get(this.baseUrl + '/busyDayHanDouble', this.publicHttpHeaders)
+  }
+  getAllBusyDaysHanSingle(){
+    console.log('/busyDayHanSingle')
+    return this._http.get(this.baseUrl + '/busyDayHanSingle', this.publicHttpHeaders)
   }
   getAllBusyDaysHanFamily(){
     return this._http.get(this.baseUrl + '/busyDayHanFamily', this.publicHttpHeaders)
   }
+  getAllReservationsAna(){
+    return this._http.get(this.baseUrl + '/getAllReservationAna', this.publicHttpHeaders)
+  }
+  getAllReservationsHan(){
+    return this._http.get(this.baseUrl + '/getAllReservationHan', this.publicHttpHeaders)
+  }
 
   bookDaysAna(){
-    console.log(this.selectedNightsArrayString)
     for(let i=0; i< this.selectedNightsArrayString.length; i++){
       var addBusyDay = {};
       addBusyDay = {
@@ -67,6 +79,22 @@ export class BusyDayService {
     }
   }
 
+  bookDaysHanSingle() {
+    for(let i=0; i < this.selectedNightsArraySingleString.length; i++){
+      var addBusyDay = {};
+      addBusyDay = {
+        busyDay: this.selectedNightsArraySingleString[i],
+        noBusyRooms: this.selectedNumberOfRooms
+      }
+      this.callBackendHanSingle(addBusyDay).subscribe((res)=>{
+        console.log(res)
+      },
+      err =>{
+        console.log(err)
+      })
+    }
+  }
+
   bookDaysHanDouble() {
     for(let i=0; i< this.selectedNightsArrayDoubleString.length; i++){
       var addBusyDay = {};
@@ -89,19 +117,20 @@ export class BusyDayService {
   callBackendHanFamily(obj: any){
     return this._http.put(this.baseUrl + '/addBusyDayHanFamily', JSON.stringify(obj), this.publicHttpHeaders)
   }
+  callBackendHanSingle(obj: any){
+    return this._http.put(this.baseUrl + '/addBusyDayHanSingle', JSON.stringify(obj), this.publicHttpHeaders)
+  }
   callBackendHanDouble(obj: any){
     return this._http.put(this.baseUrl + '/addBusyDayHanDouble', JSON.stringify(obj), this.publicHttpHeaders)
   }
 
   addReservationAna(){
     console.log(this.reservationAna)
-
-    return this._http.put(this.baseUrl + '/addReservationAna',JSON.stringify(this.reservationAna), this.publicHttpHeaders)
+    return this._http.post(this.baseUrl + '/addReservationAna',JSON.stringify(this.reservationAna), this.publicHttpHeaders).subscribe(res => console.log(res))
   }
   addReservationHan(){
     console.log(this.reservationHan)
-    return this._http.put(this.baseUrl + '/addReservationHan', JSON.stringify(this.reservationHan), this.publicHttpHeaders)
-
+    return this._http.post(this.baseUrl + '/addReservationHan', JSON.stringify(this.reservationHan), this.publicHttpHeaders).subscribe(res => console.log(res))
   }
 
 }

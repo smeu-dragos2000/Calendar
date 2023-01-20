@@ -20,7 +20,12 @@ export class TurismDescriereHanComponent implements OnInit {
 
   zileOcupate: any;
   zileOcupateFamily: any;
+  zileOcupateSingle: any;
   zileOcupateDouble: any;
+
+  showRezervaForm = this.busyDayService.showRezervaForm;
+  showForm = true;
+  dontShowForm = false;
 
   selectedNumberOfRooms: number = 0;
   // NumarCamere = 0;
@@ -33,7 +38,13 @@ export class TurismDescriereHanComponent implements OnInit {
 
   ngOnInit() {
     this.getAllBusyDaysHanDouble();
+    this.getAllBusyDaysHanSingle();
     this.getAllBusyDaysHanFamily();
+  }
+  ngOnChanges() {
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+    this.showRezervaForm = this.busyDayService.showRezervaForm;
   }
 
   showCalendar() {
@@ -46,6 +57,13 @@ export class TurismDescriereHanComponent implements OnInit {
   getAllBusyDaysHanDouble(){
     return this.busyDayService.getAllBusyDaysHanDouble().subscribe((res)=>{
       this.zileOcupateDouble = res;
+      console.log(this.zileOcupateDouble)
+    })
+  }
+  getAllBusyDaysHanSingle(){
+    return this.busyDayService.getAllBusyDaysHanSingle().subscribe((res)=>{
+      this.zileOcupateSingle = res;
+      console.log(res)
     })
   }
   getAllBusyDaysHanFamily(){

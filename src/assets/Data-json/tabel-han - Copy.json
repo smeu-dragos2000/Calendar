@@ -5,20 +5,15 @@
     "disponibil": 1,
     "capacitate" : 3,
     "pret": 300,
-    "zileOcupate": [
-      {
-        "busyDay": "06/12/2022",
-        "noBusyRooms": 1
-      },
-      {
-        "busyDay": "12/12/2022",
-        "noBusyRooms": 1
-      },
-      {
-        "busyDay": "25/12/2022",
-        "noBusyRooms": 1
-      }
-    ]
+    "zileOcupate": []
+  },
+  {
+    "tip": "Cameră single",
+    "total": 1,
+    "disponibil": 1,
+    "capacitate" : 1,
+    "pret": 150,
+    "zileOcupate": []
   },
   {
     "tip": "Cameră dublă",
@@ -26,21 +21,6 @@
     "disponibil": 5,
     "capacitate" : 2,
     "pret": 200,
-    "zileOcupate": [
-      {
-        "busyDay": "07/12/2022",
-        "noBusyRooms": 2,
-        "type":"family"
-      },
-      {
-        "busyDay": "13/12/2022",
-        "noBusyRooms": 3,
-        "type":"double"
-      },
-      {
-        "busyDay": "25/12/2022",
-        "noBusyRooms": 1
-      }
-    ]
+    "zileOcupate": []
   }
 ]

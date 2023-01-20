@@ -19,31 +19,59 @@
 </section>
 
 <!-- Page Content -->
-<div class="container">
-
-<div class="container-pensiune">
-
-  <div class="pensiune">
-    <h3 class="text-center green">Casa Ana</h3>
-    <div class="camera">
-      <h5 class="text-center green">Apartament</h5>
-      <app-calendar></app-calendar>
-    </div>
+<!-- Buttons -->
+<div class="buttons">
+  <button  *ngIf="!displayAna" (click)="displayAnaFunction()">Ana</button>
+  <button  *ngIf="!displayHan" (click)="displayHanFunction()">Han</button>
+</div>
 
 
+<!------ Table Ciorna ------>
+<!-- <div class="container-ana"  *ngIf="displayAna">
+  <h3 class="text-center green">Casa Ana</h3>
+  <app-tabel-rezervari [clients]="clientsAna"></app-tabel-rezervari>
+  <app-calendar [PricePerNight]="TabelAna[0].pret"  [RoomName]="TabelAna[0].tip" [TotalRooms]="TabelAna[0].total" [zileOcupate]="zileOcupate"></app-calendar>
+
+
+  <button class="formular-button" *ngIf="!displayForm" (click)="showForm()">Formular</button>
+  <button class="formular-button" *ngIf="displayForm" (click)="hideForm()">Închide</button>
+  <app-form-rezerva *ngIf="displayForm"></app-form-rezerva>
+  <br>
+</div> -->
+
+
+<!-- Table for Ana -->
+<div class="container-ana container"  *ngIf="displayAna">
+  <h3 class="text-center green">Casa Ana</h3>
+  <app-tabel-rezervari-ana [clients]="clientsAna"></app-tabel-rezervari-ana>
+
+  <!-- Calendar for Ana -->
+  <h4 class="text-center green">Adaugă Rezervare</h4><br>
+  <app-calendar [PricePerNight]="TabelAna[0].pret"  [RoomName]="TabelAna[0].tip" [TotalRooms]="TabelAna[0].total"></app-calendar>
+
+  <!-- <button class="formular-button" *ngIf="!displayForm" (click)="showForm()">Formular</button>
+  <button class="formular-button" *ngIf="displayForm" (click)="hideForm()">Închide</button>
+  <app-form-rezerva *ngIf="displayForm"></app-form-rezerva> -->
+  <br>
+</div>
+
+<!-- Table for Han -->
+<div class="container-ana container"  *ngIf="displayHan">
+  <h3 class="text-center green">Hanul Vânătorului</h3>
+  <app-tabel-rezervari-han [clients]="clientsHan"></app-tabel-rezervari-han>
+  <!-- Calendar for Han -->
+  <h4 class="text-center green">Adaugă Rezervare</h4><br>
+  <div class="row">
+    <h5 class="text-center green">Cameră de familie</h5>
+    <app-calendar [PricePerNight]="TabelHan[0].pret" [RoomName]="TabelHan[0].tip" [TotalRooms]="TabelHan[0].total" [zileOcupate]="zileOcupateFamily"></app-calendar>
   </div>
+  <br>
+  <div class="row">
+    <h5 class="text-center green">Cameră dublă</h5>
 
-  <div class="pensiune">
-    <h3 class="text-center green">Hanul Vânătorului</h3>
-    <div class="camera">
-      <h5 class="text-center green">Cameră de familie</h5>
-      <app-calendar></app-calendar>
-    </div>
-    <div class="camera text-center">
-      <h5 class="text-center green">Cameră dublă</h5>
-      <div class="row text-center d-inline-block">
+      <div class="text-center d-inline-block">
         <h6 class="d-inline green">Număr Camere: </h6>
-        <select  #NumarCamere  id="numarCamere" class="form-control d-inline">
+        <select  #NumarCamere (change)="onSelected(NumarCamere.value)" id="numarCamere" class="form-control d-inline">
           <option class="zero" selected value=0>0</option>
           <option value=1>1</option>
           <option value=2>2</option>
@@ -52,8 +80,14 @@
           <option value=5>5</option>
         </select> <span class="green">/ 5</span>
       </div>
-      <app-calendar></app-calendar>
-    </div>
+      <app-calendar  [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[1].tip" [TotalRooms]="TabelHan[1].total" [zileOcupate]="zileOcupateDouble" [selectedNumberOfRooms]="+NumarCamere.value"></app-calendar>
   </div>
+
+  <!-- Show/Hide Formular -->
+  <!-- <button class="formular-button" *ngIf="!displayForm" (click)="showForm()">Formular</button>
+  <button class="formular-button" *ngIf="displayForm" (click)="hideForm()">Închide</button>
+  <app-form-rezerva *ngIf="displayForm"></app-form-rezerva> -->
+  <br>
 </div>
-</div>
+
+

@@ -1,0 +1,128 @@
+.container-pensiune {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  .pensiune {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: clamp(300px, 100%, 500px);
+    min-height: 360px;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px grey;
+  }
+}
+
+.formular-button {
+  margin: 1rem auto;
+}
+
+// ___________________________________
+
+.table-container {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    th {
+      background-color: green;
+      color: white;
+      font-size: 1rem;
+      white-space:nowrap;
+      font-weight: 400;
+    }
+    td, th {
+      padding: 0.5rem;
+      text-align: center;
+      border: 1px solid black;
+    }
+    td {
+      white-space:nowrap;
+    }
+    .actions {
+      display: flex;
+      gap: 5px;
+      #delete {
+        color: red;
+      }
+    }
+
+
+
+    .td-button-delete {
+      color: rgb(124, 0, 0);
+      cursor: pointer;
+    }
+    .td-button-delete:hover {
+      opacity: 0.7;
+    }
+    .td-button-download {
+      color: rgb(0, 80, 0);
+      cursor: pointer;
+    }
+    .td-button-download:hover {
+      opacity: 0.7;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgb(238, 255, 238);
+    }
+  }
+
+  .table-small-screen {
+    display: none;
+    margin: auto;
+    border: 1px solid green;
+    min-width: 340px;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 10px grey;
+    .client {
+      border: 2px solid green;
+    }
+    .client:nth-child(even) {
+      background-color: rgb(238, 255, 238);
+    }
+    .row-table {
+      display: flex;
+      border: 1px solid green;
+      .title {
+        background-color: rgb(0, 102, 0);
+        outline: 1px solid white;
+        color: white;
+        width: 30%;
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+      .data {
+        width: 70%;
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+      .button-delete, .button-PDF {
+        cursor: pointer;
+      }
+      .button-delete:hover, .button-PDF:hover {
+        opacity: 0.8;
+      }
+      .button-delete {
+        color: rgb(124, 0, 0);
+      }
+      .button-PDF {
+        color: rgb(0, 80, 0);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .table-large-screen {
+    display: none;
+  }
+  .table-small-screen {
+    display: block !important;
+  }
+
+}
+

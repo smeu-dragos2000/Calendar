@@ -69,11 +69,19 @@
     <span  class="material-icons" >close</span>
   </button>
   <br>
+  <!-- Cameră de familie -->
   <div class="row">
     <h5 class="text-center green">Cameră de familie</h5>
     <app-calendar [PricePerNight]="TabelHan[0].pret" [RoomName]="TabelHan[0].tip" [TotalRooms]="TabelHan[0].total" [zileOcupate]="zileOcupateFamily"></app-calendar>
   </div>
-  <br>
+
+  <!-- Cameră Single -->
+  <div class="row">
+    <h5 class="text-center green">Cameră Single</h5>
+    <app-calendar [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[1].tip" [TotalRooms]="TabelHan[1].total" [zileOcupate]="zileOcupateSingle"></app-calendar>
+  </div>
+
+  <!-- Cameră dublă -->
   <div class="row">
     <h5 class="text-center green">Cameră dublă</h5>
 
@@ -85,12 +93,12 @@
           <option value=2>2</option>
           <option value=3>3</option>
           <option value=4>4</option>
-          <option value=5>5</option>
-        </select> <span class="green">/ 5</span>
+          <!-- <option value=5>5</option> -->
+        </select> <span class="green">/ 4</span>
       </div>
-      <app-calendar [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[1].tip" [TotalRooms]="TabelHan[1].total" [zileOcupate]="zileOcupateDouble" [selectedNumberOfRooms]="+NumarCamere.value"></app-calendar>
+      <app-calendar [PricePerNight]="TabelHan[1].pret" [RoomName]="TabelHan[2].tip" [TotalRooms]="TabelHan[2].total" [zileOcupate]="zileOcupateDouble" [selectedNumberOfRooms]="+NumarCamere.value"></app-calendar>
   </div>
 
-  <app-form-rezerva></app-form-rezerva>
-  <br>
+
+  <app-form-rezerva ></app-form-rezerva>
 </section>

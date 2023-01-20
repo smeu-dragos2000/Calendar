@@ -14,4 +14,64 @@
   }
 }
 
+.formular-button {
+  margin: 1rem auto;
+}
+
+// ___________________________________
+
+.table-container {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    th {
+      background-color: green;
+      color: white;
+      font-size: 1rem;
+      white-space:nowrap;
+    }
+    td, th {
+      padding: 0.5rem;
+      text-align: center;
+      border: 1px solid black;
+    }
+    td {
+      white-space:nowrap;
+    }
+
+    .td-button-delete {
+      color: rgb(124, 0, 0);
+      cursor: pointer;
+    }
+    .td-button-delete:hover {
+      opacity: 0.7;
+    }
+    .td-button-download {
+      color: rgb(0, 80, 0);
+      cursor: pointer;
+    }
+    .td-button-download:hover {
+      opacity: 0.7;
+    }
+
+    tr:nth-child(odd) {
+      background-color: rgb(224, 253, 224);
+    }
+  }
+
+}
+
+.buttons {
+  width: 50%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media only screen and (max-width: 767px) {
+  .buttons {
+    width: 100%;
+  }
+}
 
